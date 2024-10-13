@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h3>Registros de la tabla: {{ nombre_tabla }}</h3>
+<table>
+    <thead>
+        <tr>
+            {% for columna in columnas %}
+            <th>{{ columna }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for registro in registros %}
+        <tr>
+            {% for campo in registro %}
+            <td>{{ campo }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
